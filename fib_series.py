@@ -1,19 +1,13 @@
-len = 15
+# Length of the list
+n = 15
 
-# Let an empty list representing the series
-f = [0] * len
+# Base cases are 2 (0 and 1)
+# Remaining cases are n - 2 (0 for now)
+f = [0, 1] + [0] * (n - 2)
 
-# Base cases are 0, 1, ...
-# So put the first element of list as 0
-# Second element as 1
-f[0] = 0
-f[1] = 1
+# Loop through the list
+# Set every element to be the sum of previous two
+for i in range(2, n): f[i] = f[i - 1] + f[i - 2]
 
-# For loop given number of times
-# In every iteration, current element is sum of previous two
-for i in range(2,len): f[i] = f[i - 1] + f[i - 2]
-
-# Now simply print the list as comma and space seperated numbers
+# Now just print the list
 print(f)
-
-# It prints the fibonacci series upto 15
